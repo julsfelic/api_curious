@@ -14,3 +14,6 @@
 
 # Ignore SimpleCov files
 /coverage
+
+# Ignore launchy generated files
+/tmp/capybara/*.html

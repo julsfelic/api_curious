@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <%= render partial: "layouts/nav" %>
 
-<%= yield %>
+        <section class="inner cover">
+          <%= yield %>
+        </section>
+
+        <%= render partial: "layouts/footer" %>
+      </div>
+    </div>
+  </div>
+
 
 </body>
 </html>
