@@ -16,6 +16,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.0"
   gem "capybara"
   gem "simplecov", require: false
+  gem "launchy"
 end
 
 group :development do
