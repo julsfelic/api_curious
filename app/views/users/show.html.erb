@@ -1,0 +1,18 @@
+<h1><%= @user.screen_name %> Weather</h1>
+
+<h2><%= @user.location %></h2>
+
+<h2>Right Now</h2>
+<h3><%= format_temp(@weather.current_temp) %></h3>
+<p>
+  <%= @weather.current_summary %> * Feels like <%= format_temp(@weather.feels_like) %>
+</p>
+
+<h3>Next Hour</h3>
+<p><%= @weather.hour_summary %></p>
+
+<h3>Next 24 Hours</h3>
+<p><%= @weather.day_summary %></p>
+
+<h3>Next 7 Days</h3>
+<p><%= @weather.week_summary %></p>

@@ -2,10 +2,6 @@ require "rails_helper"
 require "support/authentication"
 
 feature "Registered user can logout" do
-  before(:each) do
-    stub_omniauth
-  end
-
   scenario "they are logged out" do
     user = FactoryGirl.create(:user)
     page.set_rack_session(user_id: user.id)
