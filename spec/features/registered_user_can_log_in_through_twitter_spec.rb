@@ -21,7 +21,7 @@ feature "Registered user can log in through twitter" do
     within("header.masthead") do
       expect(page).to have_content("Welcome, #{user.screen_name}!")
       expect(page).to have_link("My Weather")
-      expect(page).to have_link("Sign out")
+      expect(page).to have_link("Log out")
     end
     expect(page).to_not have_css(".cover .lead img")
   end
