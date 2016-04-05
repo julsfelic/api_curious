@@ -8,6 +8,7 @@ SimpleCov.start "rails"
 require "spec_helper"
 require "rspec/rails"
 require "capybara/rspec"
+require "rack_session_access/capybara"
 # Add additional requires below this line. Rails is not loaded until this point!
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

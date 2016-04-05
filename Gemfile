@@ -21,6 +21,8 @@ group :development, :test do
   gem "simplecov", require: false
   gem "launchy"
   gem "shoulda-matchers", "~> 3.1"
+  gem "factory_girl_rails", "~> 4.0"
+  gem "rack_session_access"
 end
 
 group :development do
