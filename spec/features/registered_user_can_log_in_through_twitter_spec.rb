@@ -17,7 +17,7 @@ feature "Registered user can log in through twitter" do
     expect(current_path).to eq(root_path)
 
     user = User.first
-    
+
     within("header.masthead") do
       expect(page).to have_content("Welcome, #{user.screen_name}!")
       expect(page).to have_link("My Weather")
