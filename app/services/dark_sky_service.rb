@@ -11,8 +11,11 @@ class DarkSkyService
 
   def get(lat, long)
     weather_hash = HTTParty.get(@host + "/" + @api_key + "/" + @lat + "," + @long)
-    # better way of doing this?
     symbolize(weather_hash)
+  end
+
+  def feels_like
+    weather[:currently][:apparentTemperature]
   end
 
   def current_temperature
@@ -23,6 +26,17 @@ class DarkSkyService
     weather[:currently][:summary]
   end
 
+  def next_hour_description
+    weather[:minutely][:summary]
+  end
+
+  def twelve_hour_description
+    weather[:hourly][:summary]
+  end
+
+  def seven_day_description
+    weather[:daily][:summary]
+  end
 
   private
 
