@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem "omniauth-twitter"
+gem "figaro"
 
 group :development, :test do
   gem "pry-rails"
@@ -18,6 +20,7 @@ group :development, :test do
   gem "capybara"
   gem "simplecov", require: false
   gem "launchy"
+  gem "shoulda-matchers", "~> 3.1"
 end
 
 group :development do
