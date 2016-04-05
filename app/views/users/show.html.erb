@@ -3,8 +3,10 @@
 <h2><%= @user.location %></h2>
 
 <h2>Right Now</h2>
-<h3><%= @weather.current_temperature %></h3>
-<p><%= @weather.current_summary %> * Feels like <%= @weather.feels_like %></p>
+<h3><%= format_temp(@weather.current_temperature) %></h3>
+<p>
+  <%= @weather.current_summary %> * Feels like <%= format_temp(@weather.feels_like) %>
+</p>
 
 <h3>Next Hour</h3>
 <p><%= @weather.next_hour_description %></p>
