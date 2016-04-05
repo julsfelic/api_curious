@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   validates :oauth_token,        presence: true
   validates :oauth_token_secret, presence: true
 
+  geocoded_by :location
+  after_validation :geocode
+
   def self.from_omniauth(auth_info)
     where(uid: auth_info[:uid]).first_or_create do |new_user|
       new_user.uid                = auth_info.uid
