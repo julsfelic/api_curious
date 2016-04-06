@@ -7,10 +7,14 @@ var $hourSummary = $('.hour-summary');
 var $daySummary = $('.day-summary');
 var $weekSummary = $('.week-summary');
 
+function formatTemp(num) {
+  return parseInt(num) + "&deg;F";
+}
+
 function parseWeather(data) {
   return {
-    currentTemp: data.currently.temperature,
-    currentSummary: data.currently.summary + " * Feels like " + data.currently.apparentTemperature,
+    currentTemp: formatTemp(data.currently.temperature),
+    currentSummary: data.currently.summary + " * Feels like " + formatTemp(data.currently.apparentTemperature),
     hourSummary: data.minutely.summary,
     daySummary: data.hourly.summary,
     weekSummary: data.daily.summary
