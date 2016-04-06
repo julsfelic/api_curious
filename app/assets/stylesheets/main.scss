@@ -2,6 +2,14 @@
  * Globals
  */
 
+body {
+  background: url(weather_background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
 /* Links */
 a,
 a:focus,
