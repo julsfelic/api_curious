@@ -8,6 +8,11 @@ end
 feature "Registered user can log in through twitter" do
   before(:each) do
     stub_omniauth
+    VCR.configure do |c|
+      c.ignore_request do |request|
+        request.uri == "http://maps.googleapis.com/maps/api/geocode/json?address=Denver,%20CO&language=en&sensor=false"
+      end
+    end
   end
 
   scenario "they see that they are logged in" do
