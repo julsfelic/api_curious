@@ -1,21 +1,27 @@
 class DarkSkyService
   attr_reader :weather
 
-  def initialize(lat, long)
-    @api_key = ENV["DARK_SKY_API_KEY"]
-    @host = "https://api.forecast.io/forecast"
-    @lat = lat.to_s
-    @long = long.to_s
+  def initialize
+    @_apikey = ENV["DARK_SKY_API_KEY"]
+    @_connection = Faraday.new("https://api.forecast.io")
   end
 
-  def get
-    weather_hash = HTTParty.get("#{@host}/#{@api_key}/#{@lat},#{@long}")
-    symbolize(weather_hash)
+  def weather(params)
+    path = "/forecast/#{apikey}/#{params[:lat]},#{params[:long]}"
+    parse(connection.get(path))
   end
 
   private
 
-  def symbolize(hash)
-    hash.deep_symbolize_keys!
+  def apikey
+    @_apikey
+  end
+
+  def connection
+    @_connection
+  end
+
+  def parse(response)
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
