@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/dashboard", to: "users#show"
+
+  post "/weather", to: "weather#create"
 end
