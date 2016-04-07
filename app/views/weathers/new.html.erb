@@ -1,30 +1,32 @@
+<%= form_for(:weather, url: weather_path, html: { class: "weather-search form-inline"}) do |f| %>
+  <%= f.label :location %>
+  <%= f.text_field :location, class: "form-control" %>
+
+  <%= f.submit "Get Weather!", class: "btn btn-primary" %>
+<% end %>
+
 <section class="row">
-  <%= form_for(:weather, url: weather_path, html: { class: "weather-search"}) do |f| %>
-   <%= f.label :location %>
-   <%= f.text_field :location %>
+  <div class="hide-weather">
+    <div class="col-md-8">
+      <%= image_tag "#" %>
+    </div>
 
-   <%= f.submit "Get Weather!" %>
-  <% end %>
+    <div class="col-md-4">
+      <h2 class="location"></h2>
 
-  <div class="col-md-8">
-    <%= image_tag "#" %>
-  </div>
+      <h2>Right Now</h2>
+      <h3 class="current-temp"></h3>
+      <p class="current-summary">
+      </p>
 
-  <div class="col-md-4">
-    <h2 class="location"></h2>
+      <h3>Next Hour</h3>
+      <p class="hour-summary"><%#= @weather.hour_summary %></p>
 
-    <h2>Right Now</h2>
-    <h3 class="current-temp"></h3>
-    <p class="current-summary">
-    </p>
+      <h3>Next 24 Hours</h3>
+      <p class="day-summary"><%#= @weather.day_summary %></p>
 
-    <h3>Next Hour</h3>
-    <p class="hour-summary"><%#= @weather.hour_summary %></p>
-
-    <h3>Next 24 Hours</h3>
-    <p class="day-summary"><%#= @weather.day_summary %></p>
-
-    <h3>Next 7 Days</h3>
-    <p class="week-summary"><%#= @weather.week_summary %></p>
+      <h3>Next 7 Days</h3>
+      <p class="week-summary"><%#= @weather.week_summary %></p>
+    </div>
   </div>
 </section>

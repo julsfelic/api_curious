@@ -17,6 +17,29 @@ body {
   margin-top: 30px;
 }
 
+.hide-weather {
+  display: none;
+}
+
+form label {
+  font-size: 20px;
+}
+
+form input[type=text].form-control {
+  border-radius: 4px 0 0 4px;
+  margin-left: 4%;
+  width: 74%;
+}
+
+form input[type=submit] {
+  border-radius: 0 4px 4px 0;
+  margin-left: -4px;
+}
+
+// form {
+//   margin-top: 50px;
+// }
+
 /* Weather Icons */
 
 .clear-day,

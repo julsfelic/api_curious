@@ -15,9 +15,8 @@
             <li>
               <%= link_to "Log out", logout_path, method: :delete %>
             </li>
-          <% else %>
-            <li><%= link_to "Search for weather", new_weather_path %></li>
           <% end %>
+          <li><%= link_to "Search for weather", new_weather_path %></li>
         </ul>
       </nav>
   </div>
