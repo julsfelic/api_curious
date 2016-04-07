@@ -10,7 +10,7 @@ feature "Registered user can view dashboard" do
       click_link "My Weather"
 
       expect(current_path).to eq(dashboard_path)
-      expect(page).to have_content("#{user.screen_name} Weather")
+      expect(page).to have_content("#{user.screen_name} weather")
     end
   end
 end
