@@ -52,11 +52,19 @@ describe Weather do
       end
     end
 
-    it "return the week summary" do
+    it "returns the week summary" do
       VCR.use_cassette("Weather::find_by") do
         weather = Weather.find_by(lat: 39.849312, long: -104.673828)
 
         expect(weather.week_summary).to eq("Light rain on Sunday and Monday, with temperatures peaking at 75°F on Saturday.")
+      end
+    end
+
+    it "returns the weather icon" do
+      VCR.use_cassette("Weather::find_by") do
+        weather = Weather.find_by(lat: 39.849312, long: -104.673828)
+
+        expect(weather.icon).to eq("partly-cloudy-day")
       end
     end
   end
