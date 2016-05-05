@@ -2,10 +2,11 @@ require "rails_helper"
 
 describe Weather do
   context "::find_by()" do
+    let(:weather) { Weather.find_by(lat: 39.849312, long: -104.673828 )}
+
     it "returns the weather pertaining to the location" do
       VCR.use_cassette("Weather::find_by") do
-        weather = Weather.find_by(lat: 39.849312, long: -104.673828)
-
+        # weather = Weather.find_by(lat: 39.849312, long: -104.673828 )
         expect(weather).to be_kind_of(Weather)
         expect(weather.feels_like).to eq(66.33)
         expect(weather.current_summary).to eq("Partly Cloudy")
